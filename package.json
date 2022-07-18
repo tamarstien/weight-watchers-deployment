@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.4"
+  },
+  "name": "weightwachers-client-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
