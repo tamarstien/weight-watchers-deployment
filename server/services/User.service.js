@@ -3,28 +3,28 @@ const fs = require('fs');
 const url='mongodb://localhost:27017'; 
 const mongoose = require('mongoose');
 const users=require('../mongo/Models/userModel');
-let addUser2= async (user) => {
-    if (user) {
-        const connection = await mongoose.connect(url);
-        debugger;
-        const userNew=new users(user);
-            await userNew.save();
-        mongoose.disconnect();
-    }
-};
+// let addUser2= async (user) => {
+//     if (user) {
+//         const connection = await mongoose.connect(url);
+//         debugger;
+//         const userNew=new users(user);
+//             await userNew.save();
+//         mongoose.disconnect();
+//     }
+// };
 
-const data = fs.readFileSync('./data/users.json');
-let dataUsers = JSON.parse(data);
-const dataUser = dataUsers.users;
+// const data = fs.readFileSync('./data/users.json');
+// let dataUsers = JSON.parse(data);
+// const dataUser = dataUsers.users;
 
-const saveToFile = async () => {
-    const json = JSON.stringify(dataUsers)
-    await fs.writeFileSync('./data/users.json', json,
-        (err) => {
-            if (err) throw err;
-            console.log('Data written to file');
-        });
-}
+// const saveToFile = async () => {
+//     const json = JSON.stringify(dataUsers)
+//     await fs.writeFileSync('./data/users.json', json,
+//         (err) => {
+//             if (err) throw err;
+//             console.log('Data written to file');
+//         });
+// }
 
 module.exports = {
     getAllUsers: async () => {
@@ -43,7 +43,7 @@ module.exports = {
         mongoose.disconnect();
         return u;
     },
-
+    
     searchUserByParams: async (userName) => {
         if (userName) {
             const connection = await mongoose.connect(url);
